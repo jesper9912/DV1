@@ -1,0 +1,127 @@
+\hypertarget{group__table}{}\doxysection{Table}
+\label{group__table}\index{Table@{Table}}
+
+
+Creating a table.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbucket}{bucket}}
+\item 
+struct \mbox{\hyperlink{structtable}{table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__table_ga26ec63fafff54c1ab7e26c84b4b561d5}\label{group__table_ga26ec63fafff54c1ab7e26c84b4b561d5}} 
+typedef struct \mbox{\hyperlink{structtable}{table}} {\bfseries Table}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtable}{Table}} $\ast$ \mbox{\hyperlink{group__table_ga13d0cf9b73ea4da0848dc69bf9c2c134}{table\+\_\+create}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Create an empty table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__table_gadb89baff2fa6df5844b3f0e60eb3da9e}{table\+\_\+destroy}} (\mbox{\hyperlink{structtable}{Table}} $\ast$tab)
+\begin{DoxyCompactList}\small\item\em Destroy the table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__table_ga6fff19a93cb02cceb2efe2e7d386199d}{table\+\_\+lookup}} (\mbox{\hyperlink{structtable}{Table}} $\ast$tab, int key, int $\ast$value)
+\begin{DoxyCompactList}\small\item\em Lookup the value for a key and return false if the key is not found. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__table_ga93cf7ad9d312e27b5394aa525cfd9af4}{table\+\_\+insert}} (\mbox{\hyperlink{structtable}{Table}} $\ast$tab, int key, int value)
+\begin{DoxyCompactList}\small\item\em Insert a key/value pair and overwrite the value if the key exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creating a table. 
+
+\begin{DoxyAuthor}{Author}
+Jesper Andersson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/12-\/2020
+\end{DoxyDate}
+Creating a table by assigning a capacity of buckets and assigning values to the buckets through the keys and values. While keeping check of which buckets have been assigned a value through the bool used variable in the struct. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__table_ga13d0cf9b73ea4da0848dc69bf9c2c134}\label{group__table_ga13d0cf9b73ea4da0848dc69bf9c2c134}} 
+\index{Table@{Table}!table\_create@{table\_create}}
+\index{table\_create@{table\_create}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{table\_create()}{table\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtable}{Table}}$\ast$ table\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Create an empty table. 
+
+Create an empty table with the capacity for the given amount of buckets. This where the space is allocated aswell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The capacity for buckets inside of the table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The empty table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__table_gadb89baff2fa6df5844b3f0e60eb3da9e}\label{group__table_gadb89baff2fa6df5844b3f0e60eb3da9e}} 
+\index{Table@{Table}!table\_destroy@{table\_destroy}}
+\index{table\_destroy@{table\_destroy}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{table\_destroy()}{table\_destroy()}}
+{\footnotesize\ttfamily void table\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtable}{Table}} $\ast$}]{tab }\end{DoxyParamCaption})}
+
+
+
+Destroy the table. 
+
+Destroy the table by deallocating the table and the buckets inside of it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & The table which you want to deallocate/destroy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__table_ga93cf7ad9d312e27b5394aa525cfd9af4}\label{group__table_ga93cf7ad9d312e27b5394aa525cfd9af4}} 
+\index{Table@{Table}!table\_insert@{table\_insert}}
+\index{table\_insert@{table\_insert}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{table\_insert()}{table\_insert()}}
+{\footnotesize\ttfamily void table\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtable}{Table}} $\ast$}]{tab,  }\item[{int}]{key,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert a key/value pair and overwrite the value if the key exists. 
+
+Find the bucket through the use of the internal function of table.\+c find\+\_\+bucket. it assigns the parameters to the bucket and sets the used value to true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & The table in which you want to insert the bucket. \\
+\hline
+{\em key} & The key for the bucket you want to assign a value to. \\
+\hline
+{\em value} & The value you want to assign to the bucket. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__table_ga6fff19a93cb02cceb2efe2e7d386199d}\label{group__table_ga6fff19a93cb02cceb2efe2e7d386199d}} 
+\index{Table@{Table}!table\_lookup@{table\_lookup}}
+\index{table\_lookup@{table\_lookup}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{table\_lookup()}{table\_lookup()}}
+{\footnotesize\ttfamily bool table\+\_\+lookup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtable}{Table}} $\ast$}]{tab,  }\item[{int}]{key,  }\item[{int $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Lookup the value for a key and return false if the key is not found. 
+
+Find the bucket through the use of the internal function of table.\+c find\+\_\+bucket. If it exists and has been assigned a used value you compare the values and return true if its correct. If it doesnt exist or it hasnt been assigned a used value it returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & The table in which the bucket resides. \\
+\hline
+{\em key} & The key for the value you want to check. \\
+\hline
+{\em value} & The value you are checking for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is found and false if it isnt. 
+\end{DoxyReturn}

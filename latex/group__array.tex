@@ -1,0 +1,173 @@
+\hypertarget{group__array}{}\doxysection{Array}
+\label{group__array}\index{Array@{Array}}
+
+
+Creating a two dimensional array.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structarray}{array}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__array_ga81a170ae533cb9bef7883f1631dc8587}\label{group__array_ga81a170ae533cb9bef7883f1631dc8587}} 
+typedef struct \mbox{\hyperlink{structarray}{array}} {\bfseries Array}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structarray}{Array}} $\ast$ \mbox{\hyperlink{group__array_ga076fbd337263a65326d6484dc59fccfe}{array\+\_\+create}} (int n1, int n2)
+\begin{DoxyCompactList}\small\item\em Create and return a zero array of size n1 rows by n2 columns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__array_ga8fed7dbcadbf201a918507ac5ccbaafb}{array\+\_\+destroy}} (\mbox{\hyperlink{structarray}{Array}} $\ast$arr)
+\begin{DoxyCompactList}\small\item\em Destroy an array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__array_ga1125ea62ec2794a2390775feb597c899}{array\+\_\+rows}} (const \mbox{\hyperlink{structarray}{Array}} $\ast$arr)
+\begin{DoxyCompactList}\small\item\em Get the number of rows. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__array_ga3082612bcf8a78bf2cd07641bcb663c7}{array\+\_\+columns}} (const \mbox{\hyperlink{structarray}{Array}} $\ast$arr)
+\begin{DoxyCompactList}\small\item\em Get the number of columns. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__array_ga2800f7b46978d071b177d78a32a45373}{array\+\_\+get}} (const \mbox{\hyperlink{structarray}{Array}} $\ast$arr, int i1, int i2)
+\begin{DoxyCompactList}\small\item\em Return the value at row i1 and column i2 (zero-\/based indexing). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__array_gab045ec4a2bf8b3158d236c4ffea8fece}{array\+\_\+set}} (\mbox{\hyperlink{structarray}{Array}} $\ast$arr, int i1, int i2, int value)
+\begin{DoxyCompactList}\small\item\em Set the value at row i1 and column i2 (zero-\/based indexing). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creating a two dimensional array. 
+
+\begin{DoxyAuthor}{Author}
+Jesper Andersson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26/11-\/2020
+\end{DoxyDate}
+This is a program made for creating and managing two dimensional arrays with a struct representing the array and its data. With it you can edit and view values at specific points in the array. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__array_ga3082612bcf8a78bf2cd07641bcb663c7}\label{group__array_ga3082612bcf8a78bf2cd07641bcb663c7}} 
+\index{Array@{Array}!array\_columns@{array\_columns}}
+\index{array\_columns@{array\_columns}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_columns()}{array\_columns()}}
+{\footnotesize\ttfamily int array\+\_\+columns (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarray}{Array}} $\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Get the number of columns. 
+
+Get the number of columns by reading const struct Array and returning it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to read amount of columns from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__array_ga076fbd337263a65326d6484dc59fccfe}\label{group__array_ga076fbd337263a65326d6484dc59fccfe}} 
+\index{Array@{Array}!array\_create@{array\_create}}
+\index{array\_create@{array\_create}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_create()}{array\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structarray}{Array}}$\ast$ array\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{n1,  }\item[{int}]{n2 }\end{DoxyParamCaption})}
+
+
+
+Create and return a zero array of size n1 rows by n2 columns. 
+
+Allocates size to the array and initalizes the data to zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & The number of rows intended for the array. \\
+\hline
+{\em n2} & The number of colums intended for the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An empty array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__array_ga8fed7dbcadbf201a918507ac5ccbaafb}\label{group__array_ga8fed7dbcadbf201a918507ac5ccbaafb}} 
+\index{Array@{Array}!array\_destroy@{array\_destroy}}
+\index{array\_destroy@{array\_destroy}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_destroy()}{array\_destroy()}}
+{\footnotesize\ttfamily void array\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structarray}{Array}} $\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Destroy an array. 
+
+Deallocates the struct Array and the data it contains.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array that will be deallocated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__array_ga2800f7b46978d071b177d78a32a45373}\label{group__array_ga2800f7b46978d071b177d78a32a45373}} 
+\index{Array@{Array}!array\_get@{array\_get}}
+\index{array\_get@{array\_get}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_get()}{array\_get()}}
+{\footnotesize\ttfamily int array\+\_\+get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarray}{Array}} $\ast$}]{arr,  }\item[{int}]{i1,  }\item[{int}]{i2 }\end{DoxyParamCaption})}
+
+
+
+Return the value at row i1 and column i2 (zero-\/based indexing). 
+
+Get the specified value from the two dimensional array by targeting the value at i1 and i2 and return it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array. \\
+\hline
+{\em i1} & The row the value is on. \\
+\hline
+{\em i2} & The column the value is on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value at the postion i1,i2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__array_ga1125ea62ec2794a2390775feb597c899}\label{group__array_ga1125ea62ec2794a2390775feb597c899}} 
+\index{Array@{Array}!array\_rows@{array\_rows}}
+\index{array\_rows@{array\_rows}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_rows()}{array\_rows()}}
+{\footnotesize\ttfamily int array\+\_\+rows (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarray}{Array}} $\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Get the number of rows. 
+
+Get the number of rows by reading const struct Array and returning it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to read amount of rows from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__array_gab045ec4a2bf8b3158d236c4ffea8fece}\label{group__array_gab045ec4a2bf8b3158d236c4ffea8fece}} 
+\index{Array@{Array}!array\_set@{array\_set}}
+\index{array\_set@{array\_set}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{array\_set()}{array\_set()}}
+{\footnotesize\ttfamily void array\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structarray}{Array}} $\ast$}]{arr,  }\item[{int}]{i1,  }\item[{int}]{i2,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value at row i1 and column i2 (zero-\/based indexing). 
+
+Set the specified value by targeting its position in the array and changing the value/data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array. \\
+\hline
+{\em i1} & The row of the value you change. \\
+\hline
+{\em i2} & the column of the value you change. \\
+\hline
+{\em value} & The value you want to set. \\
+\hline
+\end{DoxyParams}

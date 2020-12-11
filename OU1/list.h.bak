@@ -1,0 +1,59 @@
+#ifndef LIST_H
+#define LIST_H
+
+#include <stdbool.h>
+
+// The type for a node in the list.
+struct node
+{
+    struct node *next;
+    struct node *prev;
+    char *value;
+};
+
+// The type for a list.
+typedef struct list
+{
+    struct node head;
+} List;
+
+// The type for a list position.
+typedef struct list_pos
+{
+    struct node *node;
+} ListPos;
+
+// Create and return an empty list.
+List *list_create(void);
+
+// Deallocate the list (and all of its values, if any).
+void list_destroy(List *lst);
+
+// Check if the list is empty.
+bool list_is_empty(const List *lst);
+
+// Get the position of the first element.
+ListPos list_first(List *lst);
+
+// Get the position after(!) the last element.
+ListPos list_end(List *lst);
+
+// Check equality between two positions.
+bool list_pos_equal(ListPos p1, ListPos p2);
+
+// Forward to the next position.
+ListPos list_next(ListPos pos);
+
+// Backward to the previous position.
+ListPos list_prev(ListPos pos);
+
+// Insert the value before the position and return the position of the new element.
+ListPos list_insert(ListPos pos, const char *value);
+
+// Remove the value at the position and return the position of the next element.
+ListPos list_remove(ListPos pos);
+
+// Get the value at the position.
+const char *list_inspect(ListPos pos);
+
+#endif /* LIST_H */
